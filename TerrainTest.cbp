@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="TerrainTest" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="TerrainTest" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="../TerrainTest" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="TerrainTest" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="../TerrainTest" />
+				<Option object_output="obj/Release/" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add directory="/home/omikronn/Projects/irrlicht_test/trunk/include" />
+		</Compiler>
+		<Linker>
+			<Add library="Irrlicht" />
+			<Add library="GL" />
+			<Add library="GLU" />
+			<Add library="Xxf86vm" />
+			<Add directory="/home/omikronn/Projects/irrlicht_test/trunk/lib/Linux" />
+		</Linker>
+		<Unit filename="IPostProcess.h" />
+		<Unit filename="PostProcessManager.cpp" />
+		<Unit filename="PostProcessManager.h" />
+		<Unit filename="ShaderMaterial.cpp" />
+		<Unit filename="ShaderMaterial.h" />
+		<Unit filename="ShaderPostProcess.cpp" />
+		<Unit filename="ShaderPostProcess.h" />
+		<Unit filename="TerrainTexturing.cpp" />
+		<Unit filename="TerrainTexturing.h" />
+		<Unit filename="WaterSceneNode.cpp" />
+		<Unit filename="WaterSceneNode.h" />
+		<Unit filename="main.cpp" />
+		<Unit filename="shaders/glsl/material/depth.psh" />
+		<Unit filename="shaders/glsl/material/depth.vsh" />
+		<Unit filename="shaders/glsl/material/water.psh" />
+		<Unit filename="shaders/glsl/material/water.vsh" />
+		<Unit filename="shaders/glsl/postprocess/accumulate.psh" />
+		<Unit filename="shaders/glsl/postprocess/brightpass.psh" />
+		<Unit filename="shaders/glsl/postprocess/color.psh" />
+		<Unit filename="shaders/glsl/postprocess/depthoffield.psh" />
+		<Unit filename="shaders/glsl/postprocess/desaturate.psh" />
+		<Unit filename="shaders/glsl/postprocess/displacement.psh" />
+		<Unit filename="shaders/glsl/postprocess/downscale2x2.psh" />
+		<Unit filename="shaders/glsl/postprocess/dreamvision.psh" />
+		<Unit filename="shaders/glsl/postprocess/embossed.psh" />
+		<Unit filename="shaders/glsl/postprocess/finalpass_fxaa.psh" />
+		<Unit filename="shaders/glsl/postprocess/grayscale.psh" />
+		<Unit filename="shaders/glsl/postprocess/hblur.psh" />
+		<Unit filename="shaders/glsl/postprocess/invert.psh" />
+		<Unit filename="shaders/glsl/postprocess/luminance_adapt.psh" />
+		<Unit filename="shaders/glsl/postprocess/luminance_init.psh" />
+		<Unit filename="shaders/glsl/postprocess/luminance_iter.psh" />
+		<Unit filename="shaders/glsl/postprocess/motionblur.psh" />
+		<Unit filename="shaders/glsl/postprocess/nightvision.psh" />
+		<Unit filename="shaders/glsl/postprocess/pencil.psh" />
+		<Unit filename="shaders/glsl/postprocess/posterize.psh" />
+		<Unit filename="shaders/glsl/postprocess/pulsing.vsh" />
+		<Unit filename="shaders/glsl/postprocess/radialblur.psh" />
+		<Unit filename="shaders/glsl/postprocess/scratched.psh" />
+		<Unit filename="shaders/glsl/postprocess/screenquad.psh" />
+		<Unit filename="shaders/glsl/postprocess/sepia.psh" />
+		<Unit filename="shaders/glsl/postprocess/shake.vsh" />
+		<Unit filename="shaders/glsl/postprocess/sharpen.psh" />
+		<Unit filename="shaders/glsl/postprocess/simplebloom.psh" />
+		<Unit filename="shaders/glsl/postprocess/tiling.psh" />
+		<Unit filename="shaders/glsl/postprocess/underwater.psh" />
+		<Unit filename="shaders/glsl/postprocess/underwater.vsh" />
+		<Unit filename="shaders/glsl/postprocess/vblur.psh" />
+		<Unit filename="shaders/glsl/postprocess/vertex.vsh" />
+		<Unit filename="shaders/glsl/postprocess/vignette.psh" />
+		<Unit filename="shaders/glsl/postprocess/water.psh" />
+		<Unit filename="shaders/glsl/terrain.psh" />
+		<Unit filename="shaders/glsl/terrain.vsh" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

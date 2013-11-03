@@ -1,0 +1,16 @@
+// nvidia shader library
+// http://developer.download.nvidia.com/shaderlibrary/webpages/shader_library.html
+// time based displacement
+
+uniform sampler2D SceneBuffer : register(s0);
+uniform sampler2D NormalTex   : register(s1);
+
+uniform float EffectStrength;
+uniform float ElapsedTime;
+uniform float Speed;
+
+float4 main(float2 texCoord : TEXCOORD0) : COLOR0
+{
+	float4 normalCol = 2.0*tex2D(NormalTex, texCoord+ElapsedTime*Speed)-1.0;
+	return tex2D(SceneBuffer, texCoord+normalCol.xy*EffectStrength);
+}

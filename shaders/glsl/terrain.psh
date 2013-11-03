@@ -1,0 +1,13 @@
+uniform sampler2D alphaMap;
+uniform sampler2D layer_red;
+uniform sampler2D layer_green;
+uniform sampler2D layer_blue;
+
+void main() {
+    vec4 alphaChannel = texture2D(alphaMap, gl_TexCoord[0].xy);
+    vec4 RedChannel    = texture2D(layer_red, gl_TexCoord[1].xy);
+    vec4 GreenChannel  = texture2D(layer_green, gl_TexCoord[1].xy);
+    vec4 BlueChannel   = texture2D(layer_blue, gl_TexCoord[1].xy);
+
+    gl_FragColor  = vec4(alphaChannel.r * RedChannel + alphaChannel.g * GreenChannel + alphaChannel.b * BlueChannel) * vec4(1, 1, 1, alphaChannel.a);
+}

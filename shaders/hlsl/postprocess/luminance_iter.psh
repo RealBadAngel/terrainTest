@@ -1,0 +1,20 @@
+uniform sampler2D SceneBuffer : register(s0);
+
+uniform float BufferWidth;
+uniform float BufferHeight;
+
+float4 main(float2 texCoord : TEXCOORD0) : COLOR0
+{
+	float2 texSize = float2(1.0/BufferWidth, 1.0/BufferHeight);
+	float4 average = 0.0;
+    for (int v=0; v<4; v++)
+	{
+		for (int u=0; u<4; u++)
+		{
+			average += tex2D(SceneBuffer, texCoord+texSize*float2(u, v));
+		}
+	}
+    average *= 0.0625;
+    return average;	
+}
+

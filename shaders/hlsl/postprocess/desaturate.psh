@@ -1,0 +1,19 @@
+// nvidia shader library
+// http://developer.download.nvidia.com/shaderlibrary/webpages/shader_library.html
+
+uniform sampler2D SceneBuffer : register(s0);
+
+uniform float Desaturation;
+
+float4 main(float2 texCoord : TEXCOORD0) : COLOR0
+{   
+	// digital ITU Recommendations
+	const float3 ITU_R_601 = float3(0.2990, 0.5870, 0.1140);
+	const float3 ITU_R_709 = float3(0.2126, 0.7152, 0.0722);
+
+    float4 texColor = tex2D(SceneBuffer, texCoord);
+	
+    float3 gray = dot(texColor.rgb, ITU_R_601);
+    float3 result = lerp(texColor, gray.xxx, Desaturation);
+    return float4(result, 1.0);
+}

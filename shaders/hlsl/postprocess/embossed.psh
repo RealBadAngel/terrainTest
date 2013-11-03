@@ -1,0 +1,17 @@
+uniform sampler2D SceneBuffer : register(s0);
+
+uniform float BufferWidth;
+uniform float BufferHeight;
+uniform float Contrast;
+
+float4 main(float2 texCoord : TEXCOORD0) : COLOR
+{
+	float2 texSize = float2(1.0/BufferWidth, 1.0/BufferHeight);
+    float4 finalCol;
+    finalCol.a = 1.0;
+    finalCol.rgb = 0.5;
+    finalCol -= tex2D(SceneBuffer, texCoord-texSize)*Contrast;
+    finalCol += tex2D(SceneBuffer, texCoord+texSize)*Contrast;
+    finalCol.rgb = (finalCol.r+finalCol.g+finalCol.b)/3.0;
+    return finalCol;
+}

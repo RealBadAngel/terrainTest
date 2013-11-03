@@ -1,0 +1,24 @@
+// nvidia shader library
+// http://developer.download.nvidia.com/shaderlibrary/webpages/shader_library.html
+
+uniform sampler2D SceneBuffer : register(s0);
+uniform sampler2D Noise2DSamp : register(s1);
+
+uniform float ElapsedTime;
+uniform float Speed1;
+uniform float Speed2;
+uniform float ScratchIntensity;
+uniform float IS;
+
+float4 main(float2 texCoord : TEXCOORD0) : COLOR
+{
+    float scanLine = (ElapsedTime*Speed1);
+    float side = (ElapsedTime*Speed2);
+    float4 texCol = tex2D(SceneBuffer, texCoord);
+    float2 noise = float2(texCoord.x+side, scanLine);
+    float scratch = tex2D(Noise2DSamp, noise).x;
+    scratch = 2.0*(scratch-ScratchIntensity)/IS;
+    scratch = 1.0-abs(1.0-scratch);
+    scratch = max(0.0, scratch);
+    return texCol+float4(scratch.xxx, 0.0);
+}
